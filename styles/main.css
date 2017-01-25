@@ -47,6 +47,7 @@ html {
      height: 100px;
      color: white;
      text-decoration: none;
+     
  }
  
  .links-container .navbar-link {
@@ -63,7 +64,11 @@ html {
      text-transform: uppercase;
      text-decoration: none;
      cursor: pointer;
- }
+}
+
+.links-container .navbar-link:active {  
+            background-color: white;
+     } 
 
 .links-container .navbar-link:hover {
      color: rgb(233,50,117);
