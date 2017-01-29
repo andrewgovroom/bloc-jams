@@ -32,23 +32,52 @@
      
  }
  
+
  .point {
-    
      position: relative;
      padding: 2rem;
      text-align: center;
-       opacity: 0;
+        opacity: 0;
      -webkit-transform: scaleX(0.9) translateY(3rem);
      -moz-transform: scaleX(0.9) translateY(3rem);
      transform: scaleX(0.9) translateY(3rem);
-     -webkit-transition: all 0.25s ease-in-out;
-     -moz-transition: all 0.25s ease-in-out;
-     transition: all 0.25s ease-in-out;
-     -webkit-transition-delay: 0.2s;
-     -moz-transition-delay: 0.2s;
-     transition-delay: 0.2s;
+     -webkit-transition: all 2s ease-in-out;
+     -moz-transition: all 2s ease-in-out;
+     transition: all 2s ease-in-out;
+     -webkit-transition-delay: 1s;
+     -moz-transition-delay: 1s;
+     transition-delay: 1s;
  }
- 
+
+.point:hover {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+  
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+  }
+
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+}
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+    }
+
+} 
+
+
+
  .point .point-title {
      font-size: 1.25rem;
  }
