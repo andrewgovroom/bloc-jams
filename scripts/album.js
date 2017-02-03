@@ -29,6 +29,22 @@ var albumPicasso = {
      ]
  };
 
+// Third Album
+ var albumEd = {
+     title: 'X',
+     artist: 'Ed Sheeran',
+     label: 'EM',
+     year: '2014',
+     albumArtUrl: 'assets/images/album_covers/04.png',
+     songs: [
+         { title: 'One?', duration: '4:13' },
+         { title: 'Sing', duration: '3:55' },
+         { title: 'Photograph', duration: '4:18'},
+         { title: 'Bloodstream', duration: '5:00' },
+         { title: 'Runaway', duration: '3:25'}
+     ]
+ };
+
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -41,15 +57,17 @@ var albumPicasso = {
      return template;
  };
 
- var setCurrentAlbum = function(album) {
-     
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
- 
+
+
+
+ var setCurrentAlbum = function(album) {
      
+
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -67,3 +85,15 @@ var albumPicasso = {
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
+var album = [albumPicasso, albumMarconi, albumEd];
+var count = 1;
+
+albumImage.addEventListener("click", function(){
+    setCurrentAlbum(album[count]);
+    count++;
+    if(count == album.length){
+        count = 0;        
+    }
+    
+});
