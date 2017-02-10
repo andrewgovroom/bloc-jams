@@ -64,7 +64,7 @@ var albumPicasso = {
 
         if (songNumber !== currentlyPlayingSong) {
             songNumberCell.html(playButtonTemplate);
-        }
+            }
         };
         var offHover = function(event) {
          var songNumberCell = $(this).find('.song-item-number');
@@ -72,13 +72,13 @@ var albumPicasso = {
 
         if (songNumber !== currentlyPlayingSong) {
             songNumberCell.html(songNumber);
-        }
+            }
         }; 
         
      
-      $row.find('.song-item-number').click(clickHandler);
-      $row.hover(onHover, offHover);
-      return $row;
+        $row.find('.song-item-number').click(clickHandler);
+        $row.hover(onHover, offHover);
+        return $row;
      
  };
 
