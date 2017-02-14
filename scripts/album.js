@@ -315,6 +315,23 @@ var previousSong = function() {
 };
 
 
+var togglePlayFromPlayerBar = function(){
+    
+
+  if (currentSoundFile.isPaused()) {
+        $(getSongNumberCell(currentlyPlayingSongNumber)).html(pauseButtonTemplate);
+        $('.main-controls .play-pause').html(playerBarPauseButton);
+        currentSoundFile.play();
+    } else {
+        $(getSongNumberCell(currentlyPlayingSongNumber)).html(playButtonTemplate);
+        $('.main-controls .play-pause').html(playerBarPlayButton);
+        currentSoundFile.pause();   
+    }
+	       
+    
+    
+}
+
 
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
@@ -330,6 +347,7 @@ var currentVolume = 80;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
+var $playButton = $('.main-controls .play-pause');
 
 
   $(document).ready(function() {
@@ -337,5 +355,6 @@ var $nextButton = $('.main-controls .next');
      setupSeekBars();
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
+     $playButton.click(togglePlayFromPlayerBar); 
 
 });
