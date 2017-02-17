@@ -90,9 +90,9 @@ var getSongNumberCell = function(number) {
         }
         };
         var offHover = function(event) {
-            if(currentSoundFile === null) {
-                return;
-            }
+           // if(currentSoundFile === null) {
+           // return;
+           // }
         var songNumberCell = $(this).find('.song-item-number');
         var songNumber = parseInt(songNumberCell.attr('data-song-number'));
         console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);   
@@ -331,7 +331,8 @@ var togglePlayFromPlayerBar = function(){
 
     if((currentSoundFile === null)) {        
         setSong(1);
-        updateSeekBarWhileSongPlays();
+        updateSeekBarWhileSongPlays(1);
+        updatePlayerBarSong();        
         var $volumeFill = $('.volume .fill');
         var $volumeThumb = $('.volume .thumb');
         $volumeFill.width(currentVolume + '%');
