@@ -95,7 +95,7 @@ var getSongNumberCell = function(number) {
            // }
         var songNumberCell = $(this).find('.song-item-number');
         var songNumber = parseInt(songNumberCell.attr('data-song-number'));
-        console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);   
+        //console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);   
 
         if (songNumber !== currentlyPlayingSongNumber) {
             songNumberCell.html(songNumber);
@@ -376,8 +376,8 @@ var $playButton = $('.main-controls .play-pause');
   $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
      setupSeekBars();
-     $('.seek-bar .fill').width('0%');
-     $('.seek-bar .thumb').css({left: '0%'});
+     //$('.seek-bar .fill').width('0%');
+     //$('.seek-bar .thumb').css({left: '0%'});
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
      $playButton.click(togglePlayFromPlayerBar); 
